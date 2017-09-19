@@ -45,8 +45,8 @@
 		</repository> </distributionManagement> -->
 
 	<scm>
-		<connection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/trunk/coresoft-database-setup-Product</connection>
-		<developerConnection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/trunk/coresoft-database-setup-Product</developerConnection>
+		<connection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/branches/Coresoft-5.0.0/vsoft-database-setup-lat-parent-latest</connection>
+		<developerConnection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/branches/Coresoft-5.0.0/vsoft-database-setup-lat-parent-latest</developerConnection>
 
 	</scm>
 
