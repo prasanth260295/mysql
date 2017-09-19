@@ -1,0 +1,7 @@
+alter table ENTITY_TYPE_DEFINITION add(EXTENDABLE_FLAG VARCHAR2(4));
+
+update ENTITY_TYPE_DEFINITION set EXTENDABLE_FLAG='0';
+
+update ENTITY_TYPE_DEFINITION set EXTENDABLE_FLAG='1' where type_name='LoanProduct';
+
+update ENTITY_TYPE_DEFINITION set EXTENDABLE_FLAG='1' where type_name='CoresoftProduct';

@@ -1,0 +1,29 @@
+drop table INSTITUTION_CONTACT;
+
+CREATE TABLE INSTITUTION_CONTACT
+  (
+    "UNIQUE_ID"                NUMBER(10,0) NOT NULL ENABLE,
+    "INSTITUTION_ID"           VARCHAR2(30 BYTE) ,
+    "INSTITUTION_TYPE_ID"      VARCHAR2(30 BYTE),
+    "REGION_ID"                VARCHAR2(30 BYTE),
+    "ADDRESS_TYPE_ID"          VARCHAR2(30 BYTE),
+    "ADDRESS_LINE_1"           VARCHAR2(50 BYTE),
+    "ADDRESS_LINE_2"           VARCHAR2(50 BYTE),
+    "ADDRESS_LINE_3"           VARCHAR2(50 BYTE),
+    "CITY"                     VARCHAR2(30 BYTE),
+    "STATE"                    VARCHAR2(30 BYTE),
+    "COUNTRY"                  VARCHAR2(30 BYTE),
+    "ZIP_CODE"                 NUMBER(10,0),
+    "CONTACT_PERSON_NAME"      VARCHAR2(30 BYTE),
+    "CONTACT_TELEPHONE_1"      NUMBER(10,0),
+    "CONTACT_TELEPHONE_1_EXTN" NUMBER(10,0),
+    "CONTACT_TELEPHONE_2"      NUMBER(10,0),
+    "CONTACT_TELEPHONE_2_EXTN" NUMBER(10,0),
+    "FAX"                      NUMBER(10,0),
+    "URL_1"                    VARCHAR2(50 BYTE),
+    "URL_2"                    VARCHAR2(50 BYTE),
+    "EMAIL_ADDRESS_1"          VARCHAR2(50 BYTE),
+    "EMAIL_ADDRESS_2"          VARCHAR2(50 BYTE),
+    "USA_ADDRESS"              VARCHAR2(30 BYTE),
+    "LOCATION"                 VARCHAR2(30 BYTE),
+    CONSTRAINT "INSTITUTION_CONTACT_PK" PRIMARY KEY ("UNIQUE_ID") ENABLE);

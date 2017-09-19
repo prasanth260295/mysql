@@ -1,0 +1,1 @@
+insert into Loan_exception_code_lookup values(108,'Account has no servicing loan details');

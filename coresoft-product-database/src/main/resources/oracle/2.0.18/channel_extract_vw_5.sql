@@ -1,0 +1,122 @@
+--CREATE OR REPLACE VIEW CHANNEL_EXTRACT_VW ( "ID", "PARTICIPANT_ID", "CUSTOMER_TYPE", "CUST_ID_NO", "MEMBER_NO", "EXPIRATION_DATE", "NO_OF_ACCOUNTS", "DEFAULT_ACCOUNT_TYPE", "DEFAULT_ACCOUNT_QUALIFIER", "ACCOUNT_TYPE", "ACCOUNT_QUALIFIER", "ACCOUNT_NUMBER", "NO_OF_PLASTICS", "REISSUE_VALUE", "SPECIAL_HANDLING_INDICATOR", "BLOCKED_CARD_INDICATOR", "NEW_CORE_BRANCH_ID", "PIN_INDICATOR", "PIN_BLOCK", "NO_OF_CHECKS", "EMP_SECURITY_LEVEL", "FEE_GROUP_NAME", "LIMIT_GROUP_NAME", "CH_RESTRICT_TRANS_INDICATOR", "CARD_ACTIVATION_INDICATOR", "PRIOR_EXPIRE_DATE", "CAVV_CARD_OPTION", "ENTRY_MODE_RESTRICT", "CUST_LNAME", "CUST_FNAME", "CUST_MIDDLE_INTIAL", "CUST_LNAME2", "CUST_FNAME2", "CUST_MIDDLE_INTIAL2", "NO_OF_PLASTICS_TO_ISSUE", "CUST_ADDRESS_LINE1", "CUST_ADDRESS_LINE2", "CUST_CITY", "CUST_STATE", "CUST_ZIP", "COUNTRY_CODE", "CUST_DAYTIME_PHONE", "CUST_EVENING_PHONE", "EMBOSS_NAME", "CUST_REMARKS", "CUST_ACCOUNT_DESC", "SSN", "MOTHER_MAIDEN_NAME", "DOB", "VRU_PASSWORD", "DRIVERS_LICENSE_NO",
+ -- "SECOND_EMBOSS_LINE", "CREATION_DATE", "INSTITUTION_ID" )
+--AS
+ -- SELECT iso.SUBCRIPTION_ID ID,
+  --  TO_CHAR('510659') PARTICIPANT_ID,
+  --  isub.NAME CUSTOMER_TYPE,
+   -- ISO.SUBSCRIPTION_NUMBER CARD_NO,
+   -- TO_CHAR('0000') MEMBER_NO,
+   -- ISO.EXPIRATION_DATE EXPIRATION_DATE,
+   -- to_number(1) NO_OF_ACCOUNTS,
+  --  to_number(001) DEFAULT_ACCOUNT_TYPE,
+  --  to_number(001) DEFAULT_ACCOUNT_QUALIFIER,
+  --  DECODE(atl.ACCOUNT_TYPE,'Checking','01','02') ACCOUNT_TYPE,
+  --  to_number(001) ACCOUNT_QUALIFIER,
+  --  ISO.PRIMARY_ACCOUNT_NUMBER,
+   -- to_number(01) NO_OF_PLASTICS,
+   -- ISO.REISSUE_TERM REISSUE_VALUE,
+   -- '' SPECIAL_HANDLING_INDICATOR,
+   -- 'N' BLOCKED_CARD_INDICATOR,
+   -- B.NEW_CORE_BRANCH_ID,
+   -- to_number(0) PIN_INDICATOR,
+  --  '06' PIN_BLOCK,
+  --  to_number(00) NO_OF_CHECKS,
+  --  to_number(0) EMP_SECURITY_LEVEL,
+  --  '' FEE_GROUP_NAME,
+   -- LG.NAME LIMIT_GROUP_NAME,
+   -- '' CH_RESTRICT_TRANS_INDICATOR,
+   -- ISO.STATUS CARD_ACTIVATION_INDICATOR,
+  --  ISO.PRIOR_EXPIRATION_DATE PRIOR_EXPIRE_DATE,
+  --  '' CAVV_CARD_OPTION,
+  --  '' ENTRY_MODE_RESTRICT,
+   ---- P.LAST_NAME CUST_LNAME,
+   -- P.FIRST_NAME CUST_FNAME,
+   -- SUBSTR(P.MIDDLE_NAME, 1, 1) CUST_MIDDLE_INTIAL,
+   -- '' CUST_LNAME2,
+   -- '' CUST_FNAME2,
+    --'' CUST_MIDDLE_INTIAL2,
+   -- to_number(0) NO_OF_PLASTICS_TO_ISSUE,
+   -- ga.LINE_1 CUST_ADDRESS_LINE1,
+   -- ga.LINE_2 CUST_ADDRESS_LINE2,
+  --  ga.CITY CUST_CITY,
+   -- ga.STATE CUST_STATE,
+   -- ga.ZIP_1
+    --||' '
+    --||ga.ZIP_2 CUST_ZIP,
+   -- DECODE(ga.COUNTRY,'US', '840', '000' ) COUNTRY_CODE,
+   -- TAwp.PHONE CUST_DAYTIME_PHONE,
+    --TAhp.PHONE CUST_EVENING_PHONE,
+   -- Du.EMBOSS_LINE1 EMBOSS_NAME,
+   -- '' CUST_REMARKS,
+   -- '' CUST_ACCOUNT_DESC,
+   -- ssn_tin.PARTY_REGISTERD_ID SSN_TIN,
+   -- P.MOTHERS_MAIDEN_NAME MOTHER_MAIDEN_NAME,
+   ---- P.DATE_OF_BIRTH DOB,
+   -- '' VRU_PASSWORD,
+    --drid.PARTY_REGISTERD_ID DRIVERS_LICENSE_NO,
+   -- Du.EMBOSS_LINE2 SECOND_EMBOSS_LINE,
+   -- ISO.STATUS_TIME CREATION_DATE,
+   -- i.INSTITUTION_ID INSTITUTION_ID
+ -- FROM debitcard_SUBSCRIPTION iso,
+   -- LIMIT_GROUP lg,
+   -- debitcard_SUBSCRIPTION_TYPE isub,
+    --SUBSCRIBER sub,
+    --debitcard_user du,
+   -- INSTITUTION i,
+    --ACCOUNT_TYPE_LOOKUP atl,
+   -- DEPOSIT_ACCOUNT_VW ac,
+   -- branch b,
+   -- address ad,
+   -- party_address pa,
+   -- (SELECT p.party_id,
+     -- MIN(ta.ADDRESS_ID) ADDRESS_ID
+    --FROM party p,
+    --  party_address pa,
+     -- TELECOM_ADDRESS ta
+   -- WHERE p.party_id  =pa.party_id
+   -- --AND pa.address_id =ta.address_id
+   -- AND pa.ADDRESS_USE='WORK_PHONE'
+   -- GROUP BY p.PARTY_ID
+   -- ) ta,
+    --(SELECT p.party_id,
+      --MIN(ta.ADDRESS_ID) ADDRESS_ID
+    --FROM party p,
+      --party_address pa,
+      --TELECOM_ADDRESS ta
+    --WHERE p.party_id  =pa.party_id
+    --AND pa.address_id =ta.address_id
+    --AND pa.ADDRESS_USE='HOME_PHONE'
+    --GROUP BY p.PARTY_ID
+    --) ta1,
+    --ACCOUNT_STATEMENT_ADDRESS asa,
+    --ACCOUNT_STATEMENT_GENERATOR asg,
+    --(SELECT * FROM PARTY_REGISTERED_IDS WHERE TYPE IN ('SSN','TIN')
+    --) ssn_tin,
+    --(SELECT * FROM PARTY_REGISTERED_IDS WHERE TYPE='Driver''s License'
+    --) DRID,
+    --Party pr,
+    --Person p,
+    --GEOGRAPHIC_ADDRESS ga,
+    --Telecom_address tawp,
+    --Telecom_address tahp
+ -- WHERE iso.LIMIT_GROUP_ID       =lg.LIMIT_GROUP_ID
+ -- AND iso.TYPE_ID                =isub.TYPE_ID
+ -- AND iso.SUBSCRIBER_ID          =sub.SUBSCRIBER_ID
+  --AND iso.PRIMARY_USER_ID        =du.USER_ID
+  --AND iso.BANK_ID                =i.INSTITUTION_ID
+  --AND iso.PRIMARY_ACCOUNT_NUMBER =ac.ACCOUNT_NO
+ -- AND du.core_party_id           =pr.party_id
+ -- AND ac.ACCOUNT_TYPE_ID         =atl.ACCOUNT_TYPE_ID
+ -- AND ac.ACCOUNT_ID              =asg.ACCOUNT_ID
+ -- AND asg.UNIQUE_ID              =asa.UNIQUE_ID
+ -- AND asa.UNIQUE_PARTY_ADDRESS_ID=pa.UNIQUE_PARTY_ADDRESS_ID
+ -- AND pa.ADDRESS_ID              =ad.ADDRESS_ID
+  --AND ad.ADDRESS_ID              =ga.ADDRESS_ID
+ -- AND pa.party_id                =ta.party_id(+)
+ -- AND pa.party_id                =ta1.party_id(+)
+  --AND ta.address_id              =tawp.address_id(+)
+ -- AND ta1.address_id             =tahp.address_id(+)
+ -- AND pr.party_id                =ssn_tin.party_id
+ -- AND pr.party_id                =drid.party_id(+)
+ -- AND pr.party_id                =p.party_id(+)
+ -- AND ac.branch_id               =b.unique_id;

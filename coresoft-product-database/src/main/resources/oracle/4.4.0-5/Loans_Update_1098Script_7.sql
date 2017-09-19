@@ -1,0 +1,2 @@
+update property_definition set primary=0,primary_overriden=0 where property_name like '1098FormRequired'; 
+update property_definition set primary=0,primary_overriden=0 where property_name like '1099FormRequired';

@@ -1,0 +1,2 @@
+update property_definition set value_type_definition_id=0,default_value='java.lang.Boolean:false' where entity_type_definition_id
+in (select entity_type_definition_id from entity_type_definition where type_name='EscrowSummary') and PROPERTY_NAME='EscrowRefundonPayoff';

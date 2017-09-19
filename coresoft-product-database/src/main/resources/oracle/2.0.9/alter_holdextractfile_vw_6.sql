@@ -1,0 +1,48 @@
+CREATE OR REPLACE VIEW HOLD_EXTRACT_FILE_VW ( DP_ACCT_IDENTIFIER, DP_ACCT_IDENTIFIER_1, DP_ACCT_IDENTIFIER_2, DP_ACCT_IDENTIFIER_3, DP_ACCT_IDENTIFIER_4, DP_ACCT_IDENTIFIER_5, DP_SUB_ACCT_IDENTIFIER, HD_HOLD_AMT, HD_HOLD_REASON, HD_HOLD_DESC, HD_HOLD_START_DT, HD_HOLD_EXP_DT )
+AS
+SELECT
+	a.ACCOUNT_NO DP_Acct_Identifier,
+	'' DP_Acct_Identifier_1,'' DP_Acct_Identifier_2,
+	'' DP_Acct_Identifier_3,'' DP_Acct_Identifier_4,
+	'' DP_Acct_Identifier_5,'' DP_Sub_Acct_Identifier,
+ 	b.HOLD_AMOUNT HD_Hold_Amt,
+	decode(b.HOLD_TYPE_ID,'8','FD','1',DECODE(EFFECTIVE_EXPIRE_DATE,null,'LN','LG'),
+     '2',DECODE(EFFECTIVE_EXPIRE_DATE,null,'LN','LG')) HD_Hold_Reason,
+	 substr(nvl(b.DESCRIPTION,' '),1,255) HD_Hold_Desc,
+	to_char(b.EFFECTIVE_START_DATE,'yyyymmdd') HD_Hold_Start_Dt,
+	to_char(b.EFFECTIVE_EXPIRE_DATE,'yyyymmdd') HD_Hold_Exp_Dt 
+FROM
+	(	SELECT
+			Da.ACCOUNT_ID,
+			Da.ACCOUNT_NO,
+			
+            da.AVAILABLE_BALANCE
+		FROM
+			DEPOSIT_ACCOUNT_VW da 
+			
+		
+	)
+	a,
+	(	SELECT
+			DA.ACCOUNT_ID,
+			nvl(hp.hold_amount,'') hold_amount,
+			HOLD_TYPE_ID,
+			dai.DESCRIPTION,
+			dai.EFFECTIVE_START_DATE,
+			dai.EFFECTIVE_EXPIRE_DATE 
+		FROM
+			DEPOSIT_ACCOUNT_VW da ,
+			
+			DEPOSIT_ACCOUNT_INSTRUCTION dai,
+			HOLD_PAYMENT hp 
+		WHERE
+			
+			da.ACCOUNT_ID=dai.ACCOUNT_ID AND
+			dai.INSTRUCTION_ID=hp.INSTRUCTION_ID AND
+			HOLD_TYPE_ID in ('1','2','8') and 
+			( EFFECTIVE_EXPIRE_DATE is null or ( EFFECTIVE_EXPIRE_DATE > sysdate and (EFFECTIVE_EXPIRE_DATE-EFFECTIVE_START_DATE)=21 ) )
+	)
+	b 
+WHERE
+	a.ACCOUNT_ID=b.ACCOUNT_ID
+;

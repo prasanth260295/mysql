@@ -1,0 +1,1 @@
+create unique index DEP_ACCT_NO_UK on deposit(ACCOUNT_NO);

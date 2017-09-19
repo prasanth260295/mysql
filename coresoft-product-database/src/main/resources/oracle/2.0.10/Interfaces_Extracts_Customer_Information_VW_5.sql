@@ -1,0 +1,114 @@
+--create or replace view CUSTOMER_INFORMATION_VW AS
+--
+--SELECT  distinct PARVW.INSTITUTION_ASSOCIATION_ID,PARVW.PARTY_ID,PARVW.relationship_with_institution,PARVW.ACCOUNT_NO,PARVW.ASSOCIATION_DATE,PARVW.PARTY_NAME,
+--	a.ACCOUNT_CATEGORY,p.PRODUCT_TYPE_ID,p.PRODUCT_CATEGORY,a.CONTRACT_TYPE_ID,a.DATE_OPENED,
+--    	pe.FIRST_NAME,pe.MIDDLE_NAME,pe. LAST_NAME,pe.FIRST_NAME||' '||pe.MIDDLE_NAME||' '||pe.LAST_NAME FULL_NAME,pe.SUFFIX,
+--	PARVW.INSTITUTION_ID,pe.DATE_OF_BIRTH,org.BUSINESS_TYPE,org.BUSINESS_NAME,ga.LINE_1,ga.LINE_2,ga.CITY,ga.STATE,ga.CITY||','||ga.STATE CITATE,
+--	ga.COUNTRY,ga.USA_ADDRESS,ga.ZIP_1,ga.ZIP_2,ga.ZIP_1||' '||ga.ZIP_2 ZIP,HTA.PHONE HOME_PHONE,WTA.PHONE WORK_PHONE,CTA.PHONE CELL_PHONE,WA.EMAIL_ADDRESS_1,
+--	ssn.PARTY_REGISTERD_ID SSN_ID ,tin.PARTY_REGISTERD_ID TIN_ID,DRID.PARTY_REGISTERD_ID DRIVER_ID,
+--	PARVW.BUSINESS_DATE,PARVW.ASSIGNED_OFFICER,parvw.BRANCH_ID,parvw.RESPONSIBILITY_TYPE, PARVW.PARTY_TYPE,PARVW.BUREAU_SCORE,PARVW.REPORT_REQUEST_DATE
+--
+--
+--FROM 
+--	(SELECT la.original_maturity_date,l.ACCOUNT_NO,
+--    PV.PARTY_TYPE,
+--    PV.PARTY_NAME,
+--    PV.BUSINESS_NAME,
+--    PV.FIRST_NAME,
+--    par.account_id,
+--    PV.LAST_NAME,
+--    PV.EMPLOYER_NAME,
+--    AO.RESPONSIBILITY_TYPE,
+--    PR.ROLE_CREATION_DATE,
+--    PR.BUSINESS_DATE,
+--    PIA.ASSOCIATION_DATE,
+--    PIA.RELATIONSHIP_WITH_INSTITUTION,
+--    PIA.ASSIGNED_OFFICER,
+--    PV.PARTY_ID,
+--    PIA.INSTITUTION_ID,
+--    PIA.INSTITUTION_ASSOCIATION_ID,
+--    PR.UNIQUE_PARTY_ROLE_ID,
+--    PR.ROLE_TYPE_ID,
+--    PR.UNIQUE_ASSOCIATION_ID,
+--    b.branch_id,
+--    P.CREDIT_RISK_ID,
+--    c.BUREAU_SCORE,
+--    c.REPORT_REQUEST_DATE
+--  FROM PARTY_ROLE PR,
+--    PARTY_ACCOUNT_ROLE PAR,
+--    PARTY_VW PV,
+--    ACCOUNT_OWNER AO,
+--    PARTY_INSTITUTION_ASSOCIATION PIA,
+--    ACCOUNT A,
+--    loan l,
+--    loan_account la,
+--    branch b,
+--    CREDIT_BUREAU_SUMMARY c,party p 
+--  WHERE PR.UNIQUE_PARTY_ROLE_ID = PAR.UNIQUE_PARTY_ROLE_ID
+--  AND PAR.UNIQUE_PARTY_ROLE_ID  = AO.UNIQUE_PARTY_ROLE_ID
+--  AND PIA.PARTY_ID              = PV.PARTY_ID
+--  AND A.ACCOUNT_ID              = PAR.ACCOUNT_ID
+--  AND PAR.ACCOUNT_ID            = l.definition_id
+--  AND l.definition_id   =          la.account_id
+--  AND  la.opening_branch         =  b.unique_id(+)
+--  and  p.party_id             =  pv.party_id
+--  AND  P.credit_risk_id       =   c.credit_risk_id(+)
+--  AND PR.UNIQUE_ASSOCIATION_ID  = PIA.UNIQUE_ASSOCIATION_ID) PARVW,product_type p,person pe,ACCOUNT a,ORGANIZATION org,
+-- 
+--
+--	(  SELECT MAX(address_id) address_id,PARTY_ID 
+--            FROM PARTY_ADDRESS 
+--            WHERE ADDRESS_USE = 'HOME' 
+--            GROUP BY party_id
+--    )
+--    GPA ,(  SELECT MAX(address_id) address_id,PARTY_ID 
+--            FROM PARTY_ADDRESS 
+--            WHERE ADDRESS_USE = 'WORK_PHONE' 
+--            GROUP BY party_id
+--    )
+--    TPAW ,( SELECT MAX(address_id) address_id,PARTY_ID 
+--            FROM PARTY_ADDRESS 
+--            WHERE ADDRESS_USE = 'HOME_PHONE' 
+--            GROUP BY party_id 
+--    )
+--    TPAH ,( SELECT MAX(address_id) address_id,PARTY_ID 
+--            FROM PARTY_ADDRESS 
+--            WHERE ADDRESS_USE = 'CELL_PHONE' 
+--            GROUP BY party_id 
+--    )
+--    TPAC,( SELECT MAX(address_id) address_id,PARTY_ID 
+--            FROM PARTY_ADDRESS 
+--            WHERE ADDRESS_USE = 'WEB' 
+--            GROUP BY party_id
+--    )
+--    WPA ,GEOGRAPHIC_ADDRESS GA, TELECOM_ADDRESS HTA, TELECOM_ADDRESS 
+--    WTA, TELECOM_ADDRESS CTA, WEB_ADDRESS WA , (SELECT * 
+--                            FROM PARTY_REGISTERED_IDS 
+--                            WHERE TYPE='SSN'
+--    )
+--    ssn ,(  SELECT * 
+--            FROM PARTY_REGISTERED_IDS 
+--            WHERE TYPE='TIN'
+--    )
+--    tin ,(  SELECT * 
+--            FROM PARTY_REGISTERED_IDS 
+--            WHERE TYPE='Driver''s License'
+--    ) DRID
+--
+--WHERE 
+--	parvw.PARTY_ID=pe.PARTY_ID(+) 
+--    AND parvw.PARTY_ID=org.PARTY_ID(+) 
+--    AND PARVW.PARTY_ID = GPA.PARTY_ID(+) 
+--    AND PARVW.PARTY_ID = TPAW.PARTY_ID (+) 
+--    AND PARVW.PARTY_ID = TPAH.PARTY_ID (+) 
+--    AND PARVW.PARTY_ID = WPA.PARTY_ID (+) 
+--    AND GPA.ADDRESS_ID=GA.ADDRESS_ID(+) 
+--    AND TPAW.ADDRESS_ID=WTA.ADDRESS_ID(+) 
+--    AND TPAH.ADDRESS_ID=HTA.ADDRESS_ID(+) 
+--    AND TPAC.ADDRESS_ID=CTA.ADDRESS_ID(+) 
+--    AND WPA.ADDRESS_ID=WA.ADDRESS_ID(+) 
+--    AND parvw.PARTY_ID = SSN.PARTY_ID(+) 
+--    AND parvw.PARTY_ID = DRID.PARTY_ID(+)
+--    AND parvw.PARTY_ID = TIN.PARTY_ID(+)
+--    AND parvw.ACCOUNT_ID = a.ACCOUNT_ID(+)
+--    AND a.PRODUCT_ID = p.UNIQUE_ID(+);

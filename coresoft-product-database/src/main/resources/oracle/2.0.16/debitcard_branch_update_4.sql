@@ -1,0 +1,2 @@
+--alter  scripts
+alter TABLE BRANCH ADD NEW_CORE_BRANCH_ID VARCHAR2(10);

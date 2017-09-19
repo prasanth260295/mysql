@@ -1,0 +1,2 @@
+----------------------Altered the size of the LEAGAL_ACTION_DESCRIPTION -------------------
+ALTER TABLE LEGAL_ACTION_CODE MODIFY LEAGAL_ACTION_DESCRIPTION VARCHAR2(200);

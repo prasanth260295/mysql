@@ -1,0 +1,41 @@
+UPDATE
+ MAINTENANCE_LOG
+SET
+ CHANGE_FROM=NULL
+WHERE
+ CHANGE_FROM IN (
+ 'COURT_APPOINTED_FIDUCIARY',  
+ 'INDIVIDUAL',                 
+ 'IOLTA',                      
+ 'JOINT_WITHOUT_SURVIVORSHIP',
+ 'JOINT_WITH_SURVIVORSHIP',    
+ 'LAWYERS_TRUST_ACCOUNT',      
+ 'NON_PROFIT',                 
+ 'PARTNERSHIP',                
+ 'PERSONAL_OTHER',             
+ 'PUBLIC_FUNDS',               
+ 'REVOCABLE_TRUST',            
+ 'SOLE_PROPRIETORSHIP_DBA',    
+ 'TRUST',                      
+ 'UNIFORM_TRANSFERS_TO_MINORS');
+
+ UPDATE
+ MAINTENANCE_LOG
+SET
+ CHANGE_to=NULL
+WHERE
+ change_to IN (
+ 'COURT_APPOINTED_FIDUCIARY',  
+ 'INDIVIDUAL',                 
+ 'IOLTA',                      
+ 'JOINT_WITHOUT_SURVIVORSHIP',
+ 'JOINT_WITH_SURVIVORSHIP',    
+ 'LAWYERS_TRUST_ACCOUNT',      
+ 'NON_PROFIT',                 
+ 'PARTNERSHIP',                
+ 'PERSONAL_OTHER',             
+ 'PUBLIC_FUNDS',               
+ 'REVOCABLE_TRUST',            
+ 'SOLE_PROPRIETORSHIP_DBA',    
+ 'TRUST',                      
+ 'UNIFORM_TRANSFERS_TO_MINORS');

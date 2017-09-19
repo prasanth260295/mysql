@@ -1,0 +1,1 @@
+update loan_participation set controlling_investor=0 where controlling_investor is null;

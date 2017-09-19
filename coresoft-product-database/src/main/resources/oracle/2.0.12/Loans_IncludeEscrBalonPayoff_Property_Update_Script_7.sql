@@ -1,0 +1,1 @@
+update property_definition set value_type_definition_id=2, default_value='java.lang.Integer:0', valid_values= 'java.lang.Integer:{default={0=If Negative,1=If Positive,2=No}}' where property_name='IncludeEscrowBalanceOnPayOff';

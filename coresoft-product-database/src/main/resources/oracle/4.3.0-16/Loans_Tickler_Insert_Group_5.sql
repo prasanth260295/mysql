@@ -1,0 +1,1 @@
+insert into tickler_user_groups select TICKLER_USER_GROUPS_SEQ.nextval,user_id,user_id,user_id,sysdate,user_id,sysdate,null,1 from users;

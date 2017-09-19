@@ -1,0 +1,64 @@
+--CREATE OR REPLACE VIEW NOTE_INFO_VW AS
+--SELECT distinct la.account_no,
+--    pa.institution_association_id,
+--    pa.assigned_officer,
+--    lc.p_loanamount,
+--    la.principle_balance,
+--    B.BRANCH_ID,
+--    lc.p_notedate,
+--    sicv.p_datetobeginaccrual,
+--    la.original_maturity_date,
+--    psv.p_paymentfrequency,
+--    psv.p_interestfrequency,
+--    psv.p_schedulepaymentamount,
+--    SUBSTR(lli.p_interestrate,1,instr(lli.p_interestrate,'#')-1) p_interestrate,
+--    lli.p_type,
+--    la.accrued_interest,
+--    vv.p_currentindexvalue,
+--    SUBSTR(rv.p_margin,1,instr(rv.p_margin,'#')                                    -1) p_margin,
+--    SUBSTR(rv.p_subsequentadjustmentperio,instr(rv.p_subsequentadjustmentperio,':')+1) p_subsequentadjustmentperio,
+--    SUBSTR(lli.p_minimuminterestrate,1,instr(lli.p_minimuminterestrate,'#')        -1) p_minimuminterestrate,
+--    SUBSTR(lli.p_maximuminterestrate,1,instr(lli.p_maximuminterestrate,'#')        -1) p_maximuminterestrate,
+--    psv.p_interestduedate,
+--    lpv.p_code,
+--    la.loan_status,
+--    la.past_principle_due,
+--    la.no_of_days_past_due,
+--    lb.range_16_29,
+--    lb.range_30_59,
+--    lb.range_60_89,
+--    lb.range_90_365,
+--    la.next_payment_due_date,
+--    psv.p_firstpaymentdate,
+--    la.last_payment_date,
+--    lp.p_productcode,
+--    lp.p_productcategory,
+--    SUBSTR(lc.p_loanterm,instr(lc.p_loanterm,':')+1) p_loanterm,
+--    lli.p_ratechangedate
+--  FROM loan_account_VW LA,
+--    loancontract_vw LC,
+--    loancontract_svw LCV,
+--    LOAN_BILLS_LTD lb,
+--    loanproduct_vw LP,
+--    loanrepayment_vw LRP,
+--    PARTY_ACCOUNT_ROLE_VW pa,
+--    loan_interest_info_vw lli,
+--    simpleinterestcalculation_vw sicv,
+--    LOANPURPOSE_VW LPV,
+--    RATEADJUSTMENT_VW rv,
+--    variableloaninterest_vw VV,
+--    PAYMENT_SCHEDULE_INFO_VW PSV,
+--    BRANCH B
+--  WHERE LA.CONTRACT_ID          =lc.entity_type_instance_id(+)
+--  AND lc.entity_type_instance_id=lcv.entity_type_instance_id(+)
+--  AND la.account_id             =lb.account_id(+)
+--  AND la.loanaccount_id             =pa.account_id(+)
+--  AND lc.a_loanproduct          =LP.entity_type_instance_id(+)
+--  AND lp.a_loanpurpose          =lpv.entity_type_instance_id(+)
+--  AND lp.a_loaninterest         = lli.entity_type_instance_id(+)
+--  AND lli.a_interestcalculation = sicv.entity_type_instance_id(+)
+--  AND lp.a_loaninterest         = vv.entity_type_instance_id(+)
+--  AND vv.a_rateadjustment       = rv.entity_type_instance_id(+)
+--  AND lp.a_loanrepayment     = lrp.entity_type_instance_id(+)
+--  AND lrp.a_repaymentschedule   = psv.entity_type_instance_id(+)
+--  AND la.opening_branch         =b.unique_id;

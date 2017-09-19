@@ -1,0 +1,1 @@
+update property_definition set Default_value='com.vsoftcorp.finance.Money:USD 999999.00' where property_name='OverPayOffToleranceAmount';

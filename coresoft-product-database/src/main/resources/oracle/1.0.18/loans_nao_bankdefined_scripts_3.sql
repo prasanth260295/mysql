@@ -1,0 +1,157 @@
+-- Bank Defined variables start
+--INSERT INTO ENTITY_TYPE_DEFINITION 
+--(ENTITY_TYPE_DEFINITION_ID,TYPE_NAME             ,TYPE_DESCRIPTION        ,ENTITY_TYPE_INSTANCE_CLASS                       ,BASE_ENTITY_TYPE_DEF_ID,LOOKUP,SYSTEM,TEMPLATE) VALUES
+--(42000                    ,'BankDefinedVariables','Bank Defined Variables','com.vsoftcorp.types.instance.EntityTypeInstance',null                   ,0     ,0     ,null    )
+--;
+--INSERT INTO ENTITY_TYPE_DEFINITION 
+--(ENTITY_TYPE_DEFINITION_ID,TYPE_NAME             ,TYPE_DESCRIPTION        ,ENTITY_TYPE_INSTANCE_CLASS                       ,BASE_ENTITY_TYPE_DEF_ID,LOOKUP,SYSTEM,TEMPLATE) VALUES
+--(42001                    ,'MultiFamilyVariables','Multi Family Variables','com.vsoftcorp.types.instance.EntityTypeInstance',42000                  ,0     ,0     ,null    )
+--;
+--INSERT INTO ENTITY_TYPE_DEFINITION 
+--(ENTITY_TYPE_DEFINITION_ID,TYPE_NAME      ,TYPE_DESCRIPTION,ENTITY_TYPE_INSTANCE_CLASS                       ,BASE_ENTITY_TYPE_DEF_ID,LOOKUP,SYSTEM,TEMPLATE) VALUES
+--(42002                    ,'HotelVaribles','Hotel Varibles','com.vsoftcorp.types.instance.EntityTypeInstance',42000                  ,0     ,0     ,null    )
+--;
+--INSERT INTO ENTITY_TYPE_DEFINITION 
+--(ENTITY_TYPE_DEFINITION_ID,TYPE_NAME                        ,TYPE_DESCRIPTION                    ,ENTITY_TYPE_INSTANCE_CLASS                       ,BASE_ENTITY_TYPE_DEF_ID,LOOKUP,SYSTEM,TEMPLATE) VALUES
+--(42003                    ,'AnchoredShoppingCentreVariables','Anchored Shopping Centre Variables','com.vsoftcorp.types.instance.EntityTypeInstance',42000                  ,0     ,0     ,null    )
+--;
+--INSERT INTO ENTITY_TYPE_DEFINITION 
+--(ENTITY_TYPE_DEFINITION_ID,TYPE_NAME,TYPE_DESCRIPTION,ENTITY_TYPE_INSTANCE_CLASS                       ,BASE_ENTITY_TYPE_DEF_ID,LOOKUP,SYSTEM,TEMPLATE) VALUES
+--(42021                    ,'Anchor' ,'Anchor'        ,'com.vsoftcorp.types.instance.EntityTypeInstance',null                   ,0     ,0     ,null    )
+--;
+--INSERT INTO ENTITY_TYPE_DEFINITION 
+--(ENTITY_TYPE_DEFINITION_ID,TYPE_NAME      ,TYPE_DESCRIPTION,ENTITY_TYPE_INSTANCE_CLASS                       ,BASE_ENTITY_TYPE_DEF_ID,LOOKUP,SYSTEM,TEMPLATE) VALUES
+--(42022                    ,'CreditTenants','Credit Tenants','com.vsoftcorp.types.instance.EntityTypeInstance',null                   ,0     ,0     ,null    )
+--;
+--
+--
+--
+--
+--INSERT INTO ASSOCIATE_DEFINITION 
+--(ASSOCIATE_DEFINITION_ID                                           ,ENTITY_TYPE_DEFINITION_ID,ASSOCIATE_NAME ,ASSOCIATE_INDEX,ASSOCIATE_DESCRIPTION,ASSOCIATE_TYPE_DEFINITION_ID,ASSOCIATE_TYPE_OVERRIDEN,MULTIPLICITY,MULTIPLICITY_OVERRIDEN,ASSOCIATION_TYPE,ASSOCIATION_TYPE_OVERRIDEN,LAZY,LAZY_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,COPY,COPY_OVERRIDEN,DEFAULT_INSTANCE,DEFAULT_INSTANCE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,TEMPLATE,TEMPLATE_OVERRIDEN) VALUES
+--((SELECT MAX(ASSOCIATE_DEFINITION_ID)+1 FROM ASSOCIATE_DEFINITION) ,42003                    ,'AnchorDetails',0              ,'Anchor Details'     ,42021                       ,0                       ,1           ,0                     ,0               ,0                         ,1   ,0             ,0        ,0                  ,0     ,0               ,1       ,0                 ,0   ,0             ,null            ,0                         ,0        ,1                  ,1                    ,0                 ,'u'     ,null    ,0                 )
+--;
+--INSERT INTO ASSOCIATE_DEFINITION 
+--(ASSOCIATE_DEFINITION_ID                                           ,ENTITY_TYPE_DEFINITION_ID,ASSOCIATE_NAME        ,ASSOCIATE_INDEX,ASSOCIATE_DESCRIPTION   ,ASSOCIATE_TYPE_DEFINITION_ID,ASSOCIATE_TYPE_OVERRIDEN,MULTIPLICITY,MULTIPLICITY_OVERRIDEN,ASSOCIATION_TYPE,ASSOCIATION_TYPE_OVERRIDEN,LAZY,LAZY_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,COPY,COPY_OVERRIDEN,DEFAULT_INSTANCE,DEFAULT_INSTANCE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,TEMPLATE,TEMPLATE_OVERRIDEN) VALUES
+--((SELECT MAX(ASSOCIATE_DEFINITION_ID)+1 FROM ASSOCIATE_DEFINITION) ,5007                     ,'BankDefinedVariables',4              ,'Bank Defined Variables',42003                       ,0                       ,0           ,0                     ,0               ,0                         ,1   ,0             ,0        ,0                  ,0     ,0               ,1       ,0                 ,0   ,0             ,null            ,0                         ,0        ,1                  ,1                    ,0                 ,'P'     ,null    ,0                 )
+--;
+--INSERT INTO ASSOCIATE_DEFINITION 
+--(ASSOCIATE_DEFINITION_ID                                           ,ENTITY_TYPE_DEFINITION_ID,ASSOCIATE_NAME       ,ASSOCIATE_INDEX,ASSOCIATE_DESCRIPTION  ,ASSOCIATE_TYPE_DEFINITION_ID,ASSOCIATE_TYPE_OVERRIDEN,MULTIPLICITY,MULTIPLICITY_OVERRIDEN,ASSOCIATION_TYPE,ASSOCIATION_TYPE_OVERRIDEN,LAZY,LAZY_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,COPY,COPY_OVERRIDEN,DEFAULT_INSTANCE,DEFAULT_INSTANCE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,TEMPLATE,TEMPLATE_OVERRIDEN) VALUES
+--((SELECT MAX(ASSOCIATE_DEFINITION_ID)+1 FROM ASSOCIATE_DEFINITION) ,42003                    ,'CreditTenantDetails',1              ,'Credit Tenant Details',42022                       ,0                       ,1           ,0                     ,0               ,0                         ,1   ,0             ,0        ,0                  ,0     ,0               ,1       ,0                 ,0   ,0             ,null            ,0                         ,0        ,1                  ,1                    ,0                 ,'U'     ,null    ,0                 )
+--;
+--INSERT INTO ASSOCIATE_DEFINITION 
+--(ASSOCIATE_DEFINITION_ID                                           ,ENTITY_TYPE_DEFINITION_ID,ASSOCIATE_NAME        ,ASSOCIATE_INDEX,ASSOCIATE_DESCRIPTION   ,ASSOCIATE_TYPE_DEFINITION_ID,ASSOCIATE_TYPE_OVERRIDEN,MULTIPLICITY,MULTIPLICITY_OVERRIDEN,ASSOCIATION_TYPE,ASSOCIATION_TYPE_OVERRIDEN,LAZY,LAZY_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,COPY,COPY_OVERRIDEN,DEFAULT_INSTANCE,DEFAULT_INSTANCE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,TEMPLATE,TEMPLATE_OVERRIDEN) VALUES
+--((SELECT MAX(ASSOCIATE_DEFINITION_ID)+1 FROM ASSOCIATE_DEFINITION) ,5006                     ,'BankDefinedVariables',7              ,'Bank Defined Variables',42002                       ,0                       ,0           ,0                     ,0               ,0                         ,1   ,0             ,0        ,0                  ,0     ,0               ,1       ,0                 ,0   ,0             ,null            ,0                         ,0        ,1                  ,1                    ,0                 ,'P'     ,null    ,0                 )
+--;
+--INSERT INTO ASSOCIATE_DEFINITION 
+--(ASSOCIATE_DEFINITION_ID                                           ,ENTITY_TYPE_DEFINITION_ID,ASSOCIATE_NAME        ,ASSOCIATE_INDEX,ASSOCIATE_DESCRIPTION   ,ASSOCIATE_TYPE_DEFINITION_ID,ASSOCIATE_TYPE_OVERRIDEN,MULTIPLICITY,MULTIPLICITY_OVERRIDEN,ASSOCIATION_TYPE,ASSOCIATION_TYPE_OVERRIDEN,LAZY,LAZY_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,COPY,COPY_OVERRIDEN,DEFAULT_INSTANCE,DEFAULT_INSTANCE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,TEMPLATE,TEMPLATE_OVERRIDEN) VALUES
+--((SELECT MAX(ASSOCIATE_DEFINITION_ID)+1 FROM ASSOCIATE_DEFINITION) ,5002                     ,'BankDefinedVariables',7              ,'Bank Defined Variables',42001                       ,0                       ,0           ,0                     ,0               ,0                         ,1   ,0             ,0        ,0                  ,0     ,0               ,1       ,0                 ,0   ,0             ,null            ,0                         ,0        ,1                  ,1                    ,0                 ,'P'     ,null    ,0                 )
+--;
+--
+--
+--
+--
+--
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME    ,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                    ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42003                    ,'NumberofAnchors',0             ,'Number of Anchors' ,2                       ,0                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'u'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME          ,PROPERTY_INDEX,PROPERTY_DESCRIPTION      ,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                    ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42003                    ,'NumberofCreditTenants',1             ,'Number of Credit Tenants',2                       ,0                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'u'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME  ,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                    ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42002                    ,'NumberofRooms',0             ,'Number of Rooms'   ,2                       ,0                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'p'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                                         ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42002                    ,'Corridors'  ,1             ,'Corridors'         ,2                       ,0                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={0=Interior,1=Exterior}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'p'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                                       ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42002                    ,'Flag'       ,2             ,'Flag'              ,2                       ,0                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={0=Hampton,1=Holiday}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'p'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME     ,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                    ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42001                    ,'NumberofBedrooms',0             ,'Number of Bedrooms',2                       ,0                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'p'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME      ,PROPERTY_INDEX,PROPERTY_DESCRIPTION ,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                    ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42001                    ,'NumberofBathrooms',1             ,'Number of Bathrooms',2                       ,0                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'p'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME      ,PROPERTY_INDEX,PROPERTY_DESCRIPTION ,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                   ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42001                    ,'AverageSquareFoot',2             ,'Average Square Foot',3                       ,0                ,0                          ,null         ,0                      ,'java.lang.Double:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'p'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                   ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42021                    ,'AnchorName' ,0             ,'Anchor Name'       ,1                       ,0                ,0                          ,null         ,0                      ,'java.lang.String:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'u'     ,0                ,0      )
+--;
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME     ,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                   ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42022                    ,'CreditTenantName',0             ,'Credit Tenant Name',1                       ,0                ,0                          ,null         ,0                      ,'java.lang.String:{default={}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'u'     ,0                ,0      )
+--;
+--
+--
+---- Bank Defined variables end
+--
+--
+--update PROPERTY_DEFINITION set PROPERTY_NAME='EarningDate', PROPERTY_DESCRIPTION='Earning Date' where PROPERTY_NAME='EarningDate';
+--
+--delete from property_definition where PROPERTY_NAME = 'MinimumEarnings' and ENTITY_TYPE_DEFINITION_id = 489;
+--
+--
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME    ,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE                         ,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                              ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,485                      ,'MinimumEarnings',19            ,'Minimum Earnings'  ,8                       ,0                ,0                          ,'com.vsoftcorp.finance.Money:USD 7.50',0                      ,'com.vsoftcorp.finance.Money:{default={}}',0                     ,1        ,0                  ,1     ,0               ,0       ,0                 ,0        ,1                  ,1                    ,0                 ,null    ,0                ,0      )
+--;
+--
+--update property_definition set ENTITY_TYPE_DEFINITION_ID = 42061 where property_name in 
+--('EscrowPaymentChangeDate', 'LastEscrowAnalysisDate');
+--
+--update property_definition set hidden = 1 where property_name = 'EscrowPaymentChangeDate';
+
+ALTER TABLE LOAN_ACCOUNT ADD ( ACCRUED_INTEREST_LTD NUMBER ( 10,5));
+
+
+--delete from ASSOCIATE_DEFINITION where ENTITY_TYPE_DEFINITION_id = 82302;
+--delete from property_definition where ENTITY_TYPE_DEFINITION_id = 82302;
+--
+--update associate_definition set associate_name = 'DealerParticipation' , associate_description = 'Dealer Participation' 
+--where associate_name like 'Dealers';
+--
+--update ENTITY_TYPE_DEFINITION set type_name = 'ApartmentDetails'  , TYPE_DESCRIPTION = 'Apartment Details' where type_name like 'MultiFamilyVariables';
+--
+--INSERT INTO ENTITY_TYPE_DEFINITION 
+--(ENTITY_TYPE_DEFINITION_ID,TYPE_NAME     ,TYPE_DESCRIPTION,ENTITY_TYPE_INSTANCE_CLASS                       ,BASE_ENTITY_TYPE_DEF_ID,LOOKUP,SYSTEM,TEMPLATE) VALUES
+--(42063                    ,'FlatsDetails','Flats Details' ,'com.vsoftcorp.types.instance.EntityTypeInstance',null                   ,0     ,0     ,null    )
+--;
+--
+--INSERT INTO PROPERTY_DEFINITION 
+--(PROPERTY_DEFINITION_ID                                          ,ENTITY_TYPE_DEFINITION_ID,PROPERTY_NAME  ,PROPERTY_INDEX,PROPERTY_DESCRIPTION,VALUE_TYPE_DEFINITION_ID,DESCRIPTION_FIELD,DESCRIPTION_FIELD_OVERRIDEN,DEFAULT_VALUE,DEFAULT_VALUE_OVERRIDEN,VALID_VALUES                                                                                                                                                   ,VALID_VALUES_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,PRIMARY_OVERRIDEN,PRIMARY) VALUES
+--((SELECT MAX(PROPERTY_DEFINITION_ID)+1 FROM PROPERTY_DEFINITION) ,42063                    ,'ApartmentType',0             ,'Apartment Type'    ,2                       ,1                ,0                          ,null         ,0                      ,'java.lang.Integer:{default={1=1 Bedroom Apartment,2=2 Bedroom Apartment,3=3 Bedroom Apartment,4=4 Bedroom Apartment,5=5 Bedroom Apartment,6=6 Bedroom Apartment}}',0                     ,0        ,0                  ,0     ,0               ,1       ,0                 ,0        ,1                  ,1                    ,0                 ,'P'    ,0                ,0      )
+--;
+--
+--INSERT INTO ASSOCIATE_DEFINITION 
+--(ASSOCIATE_DEFINITION_ID                                           ,ENTITY_TYPE_DEFINITION_ID,ASSOCIATE_NAME,ASSOCIATE_INDEX,ASSOCIATE_DESCRIPTION,ASSOCIATE_TYPE_DEFINITION_ID,ASSOCIATE_TYPE_OVERRIDEN,MULTIPLICITY,MULTIPLICITY_OVERRIDEN,ASSOCIATION_TYPE,ASSOCIATION_TYPE_OVERRIDEN,LAZY,LAZY_OVERRIDEN,MANDATORY,MANDATORY_OVERRIDEN,HIDDEN,HIDDEN_OVERRIDEN,EDITABLE,EDITABLE_OVERRIDEN,COPY,COPY_OVERRIDEN,DEFAULT_INSTANCE,DEFAULT_INSTANCE_OVERRIDEN,INHERITED,CAN_EDIT_DEFINITION,CAN_DELETE_DEFINITION,CATEGORY_OVERRIDEN,CATEGORY,TEMPLATE,TEMPLATE_OVERRIDEN) VALUES
+--((SELECT MAX(ASSOCIATE_DEFINITION_ID)+1 FROM ASSOCIATE_DEFINITION) ,42001                    ,'FlatsDetails',0              ,'Flats Details'      ,42063                       ,0                       ,1           ,0                     ,0               ,0                         ,1   ,0             ,0        ,0                  ,0     ,0               ,1       ,0                 ,0   ,0             ,null            ,0                         ,0        ,1                  ,1                    ,0                 ,'U'     ,null    ,0                 )
+--;
+--
+--update property_definition set ENTITY_TYPE_DEFINITION_id = 42063 where ENTITY_TYPE_DEFINITION_ID = 42001;
+--
+--update property_definition set property_name = 'NumberofFlats', property_description ='Number of Flats' where property_name = 'NumberofBedrooms';
+--
+--update property_definition set property_index = 1 where property_name = 'NumberofFlats';
+--update property_definition set property_index = 2 where property_name = 'NumberofBathrooms';
+--update property_definition set property_index = 3 where property_name = 'AverageSquareFoot';
+--
+--update PROPERTY_DEFINITION set VALID_VALUES='java.lang.Integer:{default={0=No,1=Lowest,2=Highest}}', DEFAULT_VALUE='java.lang.Integer:0',VALUE_TYPE_DEFINITION_ID=2 where PROPERTY_NAME='ReDetermineRateIndicator';
+--update property set value='java.lang.Integer:0' where PROPERTY_NAME='ReDetermineRateIndicator';
+--
+--update PROPERTY_DEFINITION set HIDDEN = 1 where property_name = 'IncludeLateChargeOnPayOff';
+--
+--update property_definition set CATEGORY = 'C', PROPERTY_DESCRIPTION = 'Insurance Due Date', 
+--PROPERTY_NAME = 'InsuranceDueDate' where PROPERTY_NAME = 'InsuranceDuedate';
+--
+--update PROPERTY_DEFINITION set mandatory = 0 where property_name= 'PaymentChangeDate' and ENTITY_TYPE_DEFINITION_ID = 702;

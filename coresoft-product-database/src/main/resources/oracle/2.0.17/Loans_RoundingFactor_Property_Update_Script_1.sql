@@ -1,0 +1,2 @@
+update property_definition set default_value=null where property_name='RoundingFactor' and entity_type_definition_id in(
+select entity_type_definition_id from entity_type_definition where type_name in('ARMType','VariableType'));

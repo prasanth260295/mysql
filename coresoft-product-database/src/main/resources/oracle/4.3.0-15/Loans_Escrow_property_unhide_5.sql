@@ -1,0 +1,2 @@
+--escrow analysis last date unhiding.
+update property_presenter_attributes set hidden=0 where property_definition_id in (select property_definition_id from property_definition where property_name like 'EscrowAnalysisLastDate');

@@ -1,0 +1,2 @@
+update property_definition set value_type_definition_id=1,default_value=null,valid_values='java.lang.String:{default={}}'  where entity_type_definition_id in(select entity_type_definition_id from entity_type_definition where
+type_name='CollectorAgent') and property_name='CollectorCode';

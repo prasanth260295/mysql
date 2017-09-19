@@ -1,0 +1,6 @@
+--LOAN_EXCEPTION_CODE_LOOKUP
+
+insert into  LOAN_EXCEPTION_CODE_LOOKUP (EXCEPTION_CODE_ID,DESCRIPTION)
+values ('104','No Accident  Insurance') ;
+
+

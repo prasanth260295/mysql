@@ -1,0 +1,21 @@
+-- Statement Msg Parameters
+
+CREATE TABLE STATEMENT_MSG_TYPE_INFO
+(
+   ID decimal(12),
+   STMT_MSG_TYPE varchar2(50),
+   NO_OF_LINES decimal(10),
+   LENGTH_OF_LINE decimal(10)
+);
+
+INSERT INTO STATEMENT_MSG_TYPE_INFO(ID, STMT_MSG_TYPE, NO_OF_LINES, LENGTH_OF_LINE)
+VALUES (1, 'CustomerSupportInformation',6,40);
+
+INSERT INTO STATEMENT_MSG_TYPE_INFO(ID, STMT_MSG_TYPE, NO_OF_LINES, LENGTH_OF_LINE)
+VALUES (2, 'ProductAdvertisement',10,34);
+
+ALTER TABLE STATEMENT_MESSAGE ADD effective_date date;
+
+update STATEMENT_MESSAGE set effective_date=to_date('05/28/2013','mm/dd/yyyy');
+
+ALTER TABLE PERSON ADD DATE_OF_DEATH DATE;

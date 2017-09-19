@@ -1,0 +1,175 @@
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.types.instance.EntityTypeInstance';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS = 'com.vsoftcorp.loan.model.entities.LoanProduct' where type_name ='CBTLoan';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS = 'com.vsoftcorp.loan.model.entities.LoanProduct' where BASE_ENTITY_TYPE_DEF_ID like 1303;
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS = 'com.vsoftcorp.loan.model.entities.LoanProduct' where type_name ='LoanProduct';
+--
+----update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS = 'com.vsoftcorp.coresoft.account.Contract' where type_name like 'Contract';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS = 'com.vsoftcorp.loan.model.entities.LoanContract' where type_name='LoanContract';
+--
+--
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.AHLifeInsurance' where TYPE_NAME='AHLifeInsurance';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.AlternatePaymentSchedule' where TYPE_NAME='AlternatePaymentSchedule';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.AmortizedInterestCalculation'
+--where TYPE_NAME='AmortizedInterestCalculation';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.ARMType'
+--where TYPE_NAME='ARMType';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.AutoDraft' where TYPE_NAME='AutoDraft';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.BillingNotice'
+--where TYPE_NAME='BillingNotice';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.CallReportCode'
+--where TYPE_NAME='CallReportCode';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.Collateral'
+--where TYPE_NAME='Collateral';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.CollateralAppraisal'
+--where TYPE_NAME='CollateralAppraisal';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.CollateralCode'
+--where TYPE_NAME='CollateralCode';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.CouponBook'
+--where TYPE_NAME='CouponBook';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.DealerAgency'
+--where TYPE_NAME='DealerAgency';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.DealerParticipation'
+--where TYPE_NAME='DealerParticipation';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.DefferedIncomeExpense'
+--where TYPE_NAME = 'DeferredIncomeExpense';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.DemandNoteSchedule'
+--where TYPE_NAME = 'DemandNoteSchedule';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.DiscountedInterestCalculation'
+--where TYPE_NAME='DiscountedInterestCalculation';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.DistributionHead'
+--where TYPE_NAME='DistributionHead';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.EarningExpensesHistory'
+--where TYPE_NAME='EarningExpensesHistory';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.EscrowDetail'
+--where TYPE_NAME = 'EscrowDetail';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.EscrowDisbursement'
+--where TYPE_NAME='EscrowDisbursement';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.ExaminerClassification'
+--where TYPE_NAME='ExaminerClassification';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.ExternalAgency'
+--where TYPE_NAME='ExternalAgency';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.FixedLoanInterest'
+--where TYPE_NAME='FixedLoanInterest';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.FloatingInterestRatePenalty'
+--where TYPE_NAME='FloatingInterestRatePenalty';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.GLAllocation'
+--where TYPE_NAME='GLAllocation';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.InsuranceEscrow'
+--where TYPE_NAME='InsuranceEscrow';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.InsuranceTax'
+--where TYPE_NAME='InsuranceTax';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.IrregularPaymentSchedule'
+--where TYPE_NAME='IrregularPaymentSchedule';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.LateCharge'
+--where TYPE_NAME='LateCharge';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.LoanAdvance'
+--where TYPE_NAME='LoanAdvance';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.LoanContract'
+--where TYPE_NAME='LoanContract';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.LoanOfficer'
+--where TYPE_NAME='LoanOfficer';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.LoanProduct'
+--where TYPE_NAME='LoanProduct';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.LoanRepayment'
+--where TYPE_NAME='LoanRepayment';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.ParticipantBank'
+--where TYPE_NAME='ParticipantBank';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.PastDueParameters'
+--where TYPE_NAME='PastDueParameters';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.PaymentAdjustment'
+--where TYPE_NAME='PaymentAdjustment';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.PaymentAdjustmentHistory'
+--where TYPE_NAME='PaymentAdjustmentHistory';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.PaymentSchedule'
+--where TYPE_NAME='PaymentSchedule';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.PayOff'
+--where TYPE_NAME='Payoff';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.Penalty'
+--where TYPE_NAME='Penalty';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.PostingSequence'
+--where TYPE_NAME='PostingSequence';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.PropertyCollateral'
+--where TYPE_NAME='CollateralProperty';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.RateAdjustment'
+--where TYPE_NAME='RateAdjustment';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.RateChangeHistory'
+--where TYPE_NAME='RateChangeHistory';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.RateIndex'
+--where TYPE_NAME='RateIndex';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.RateIndexHistory'
+--where TYPE_NAME='RateIndexHistory';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.Region'
+--where TYPE_NAME='Region';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.RegularPaymentSchedule'
+--where TYPE_NAME='RegularPaymentSchedule';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.RepaymentMode'
+--where TYPE_NAME='RepaymentMode';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.SimpleInterestCalculation'
+--where TYPE_NAME='SimpleInterestCalculation';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.SinglePaySchedule'
+--where TYPE_NAME='SinglePaySchedule';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.VariableLoanInterest'
+--where TYPE_NAME='VariableLoanInterest';
+--
+--update ENTITY_TYPE_DEFINITION set ENTITY_TYPE_INSTANCE_CLASS='com.vsoftcorp.loan.model.entities.VariableType'
+--where TYPE_NAME='VariableType';
+--
+--update PROPERTY_DEFINITION set VALUE_TYPE_DEFINITION_id = 11 where PROPERTY_DEFINITION_id in (
+--select PROPERTY_DEFINITION_id from PROPERTY_DEFINITION where property_name like '%elephone%');

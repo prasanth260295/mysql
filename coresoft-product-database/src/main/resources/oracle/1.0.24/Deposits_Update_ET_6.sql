@@ -1,0 +1,1 @@
+--update ENTRY_TYPE set DEBIT_OR_CREDIT=0 where id=279;

@@ -1,0 +1,15 @@
+ALTER TABLE account DROP constraint ACCOUNT_ACCNO_IID_UK; 
+
+alter table account set unused(PROCESSING_STATUS,CREATION_DATE,BUSINESS_DATE,LAST_PROCESSED_DATE,ACCOUNT_NO);
+
+ALTER TABLE account DROP UNUSED COLUMNS;
+
+drop index ACCOUNT_ID_IDX;
+
+drop index ACCOUNT_INST_ID_NUM_IDX;
+
+alter table account rename column account_type_id to CONTRACT_TYPE_ID;
+
+create index ACCOUNT_INST_ID_NUM_IDX on ACCOUNT( TO_NUMBER(INSTITUTION_ID));
+
+create index ACCOUNT_ID_IDX on ACCOUNT (TO_NUMBER(ACCOUNT_ID));

@@ -1,0 +1,3 @@
+--Commented because already in 1.0.23
+--insert into DOC6_PARAMETERS values( '1','DEFAULT','1','1','0','1','0','0','B','B','','0','','1');
+--alter table cycle_group_config add(STMT_PRINT_OPTION number(10));

@@ -1,0 +1,1 @@
+update property set value='java.lang.String:Service Fee' where property_name='Description' and value='java.lang.String:Servicing Fee Code';

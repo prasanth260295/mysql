@@ -1,0 +1,2 @@
+--alter Loan_account_day table
+ALTER table LOAN_ACCOUNT_DAY add(OPENING_PAST_DUE_DAYS Number(10,0),OPENING_PAST_DUE_PAYMENTS Number(10,0),PAST_DUE_DAYS Number(10,0),PAST_DUE_PAYMENTS Number(10,0));

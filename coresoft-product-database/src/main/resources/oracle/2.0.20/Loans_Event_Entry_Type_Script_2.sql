@@ -1,0 +1,1 @@
+insert into LOAN_EVENT_ENTRY_TYPE_LINK values(42,1817);

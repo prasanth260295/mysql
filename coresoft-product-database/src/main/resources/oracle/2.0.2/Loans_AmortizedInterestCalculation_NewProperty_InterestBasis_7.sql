@@ -1,0 +1,12 @@
+--The below scripts commented because already in 1.0.23
+
+--INSERT INTO PROPERTY_DEFINITION(PROPERTY_DEFINITION_ID, ENTITY_TYPE_DEFINITION_ID, PROPERTY_NAME, PROPERTY_INDEX, PROPERTY_DESCRIPTION, VALUE_TYPE_DEFINITION_ID, DESCRIPTION_FIELD, DESCRIPTION_FIELD_OVERRIDEN, DEFAULT_VALUE, DEFAULT_VALUE_OVERRIDEN, VALID_VALUES, VALID_VALUES_OVERRIDEN, MANDATORY, MANDATORY_OVERRIDEN, INHERITED, CAN_EDIT_DEFINITION, CAN_DELETE_DEFINITION, CATEGORY_OVERRIDEN, CATEGORY, PRIMARY_OVERRIDEN, PRIMARY, MAX_LENGTH, DATA_EXPRESSION)
+--  VALUES((select max(property_definition_id)+1  from property_definition), (select entity_type_definition_id from entity_type_definition where type_name='AmortizedInterestCalculation'), 'InterestBasis', 0, 'Interest Basis', 2, 1, 0, 'java.lang.Integer:4', 0, 'java.lang.Integer:{default={0=Actual/365 Basis,1=Actual/366 Basis,2=Actual/364 Basis,3=Actual/360 Basis,4=30/360 Basis-Amortized,5=Rule of 78''s,6=Annual/Actual Basis - Amortized,7=Actual/Actual Basis,8=30/360 Basis-Simple}}', 0, 1, 0, 0, 1, 0, 0, 'UC', 0, 0, 999, '.*');
+--  
+--
+--INSERT INTO PROPERTY_PRESENTER_ATTRIBUTES(PROPERTY_DEFINITION_ID, HIDDEN, HIDDEN_OVERRIDEN, EDITABLE, EDITABLE_OVERRIDEN, STATE_NAME)
+--  VALUES((select max(property_definition_id)  from property_definition), 0, 0, 1, 0, 'ACCOUNT_CREATED');
+--INSERT INTO PROPERTY_PRESENTER_ATTRIBUTES(PROPERTY_DEFINITION_ID, HIDDEN, HIDDEN_OVERRIDEN, EDITABLE, EDITABLE_OVERRIDEN, STATE_NAME)
+--  VALUES((select max(property_definition_id)  from property_definition), 0, 0, 1, 0, 'DEFAULT');
+--INSERT INTO PROPERTY_PRESENTER_ATTRIBUTES(PROPERTY_DEFINITION_ID, HIDDEN, HIDDEN_OVERRIDEN, EDITABLE, EDITABLE_OVERRIDEN, STATE_NAME)
+--  VALUES((select max(property_definition_id)  from property_definition), 0, 0, 0, 0, 'INQUIRY');

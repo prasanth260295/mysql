@@ -1,0 +1,2 @@
+--Added Script for changing the InventoryInspectionDetails entity name.
+update entity_type_definition set entity_type_instance_class='com.vsoftcorp.loan.model.entities.InventoryInspectionDetails' where entity_type_instance_class='com.vsoftcorp.loan.model.entities.DealerFloorPlan';

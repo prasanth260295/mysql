@@ -1,0 +1,1 @@
+alter table appl_product add SAVINGS_PLAN_TYPE NUMBER(5);

@@ -1,0 +1,54 @@
+<project name="common-schema-setup-command-line" default="product-schema-setup" basedir=".">
+
+	<description>
+        Script to invoke product schema setup
+    </description>
+
+	<!-- For common-schema -->
+	<property name="commonschema.dir" value="." />
+
+	<property name="db.driver" value="oracle.jdbc.driver.OracleDriver" />
+	<property name="db.url" value="jdbc:oracle:thin:@192.168.2.9:1521:orcl" />
+	<property name="db.login" value="CORESOFT_PATCHRUN_TEST" />
+	<property name="db.password" value="CORESOFT_PATCHRUN_TEST" />
+
+
+	<!-- Classpath for commonschema -->
+	<path id="commonschema.class.path">
+		<dirset dir="${commonschema.dir}" />
+		<fileset dir="${commonschema.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="product-schema-setup" depends="patch-runner-coresoft-database-product" />
+	
+	<target name="demo-schema-setup" depends="patch-runner-coresoft-database-product,patch-runner-demo-database" />
+
+	
+	
+	<!-- Common schema targets -->
+
+	<target name="patch-runner-coresoft-database-product">
+		<java fork="true" classpathref="commonschema.class.path" className="com.vsoftcorp.coresoft.database.setup.CoreSoftDatabaseInstaller" failonerror="true">
+			<arg value="INSTALL" />
+			<arg value="-DconnectionUrl=${db.url}" />
+			<arg value="-Dusername=${db.login}" />
+			<arg value="-Dpassword=${db.password}" />
+			<arg value="-DdriverClassName=${db.driver}" />
+			<arg value="-DdbType=ORACLE" />
+		</java>
+	</target>
+	
+	<target name="patch-runner-demo-database">
+			<java fork="true" classpathref="commonschema.class.path" className="com.vsoftcorp.coresoft.demo.database.setup.CoreSoftDemoDatabaseInstaller" failonerror="true">
+				<arg value="INSTALL" />
+				<arg value="-DconnectionUrl=${db.url}" />
+				<arg value="-Dusername=${db.login}" />
+				<arg value="-Dpassword=${db.password}" />
+				<arg value="-DdriverClassName=${db.driver}" />
+				<arg value="-DdbType=ORACLE" />
+			</java>
+		</target>
+
+</project>
