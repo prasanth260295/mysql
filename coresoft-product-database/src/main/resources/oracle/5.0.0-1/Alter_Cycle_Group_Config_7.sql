@@ -1,0 +1,1 @@
+alter table CYCLE_GROUP_CONFIG add region_id varchar2(30);
