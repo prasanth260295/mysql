@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.vsoftcorp.coresoft.product</groupId>
 	<artifactId>coresoft-database-product</artifactId>
-	<version>5.0.0-10-SNAPSHOT</version>
+	<version>5.0.0-10</version>
 	<packaging>pom</packaging>
 	<name>${project.artifactId}-${project.version}</name>
 	<description>Coresoft Database Product</description>
@@ -70,8 +70,8 @@
 		</repository> </distributionManagement> -->
 
 	<scm>
-		<connection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/branches/Coresoft-5.0.0/vsoft-database-setup-lat-parent-latest</connection>
-		<developerConnection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/branches/Coresoft-5.0.0/vsoft-database-setup-lat-parent-latest</developerConnection>
+		<connection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/tags/coresoft-database-product-5.0.0-10</connection>
+		<developerConnection>scm:svn:http://svn.vsoft.cloud:8080/svn/coresoft/tags/coresoft-database-product-5.0.0-10</developerConnection>
 
 	</scm>
 
