@@ -14,9 +14,9 @@ create table FEE_PACKAGE_PRODUCTS
    CONSTRAINT "FEE_PACKAGE_PRODUCTS_PK" PRIMARY KEY ("UNIQUE_ID") ENABLE,
    CONSTRAINT "FEE_PKG_ID_PRODS_FK" FOREIGN KEY ("FEE_PKG_ID") REFERENCES "FEE_PACKAGE" ("FEE_PKG_ID") ENABLE);
 
-alter table package_line_item add SAVINGS_TRAN_CODE NUMBER(10);
-alter table package_line_item add CHEKING_TRAN_CODE NUMBER(10);
-alter table package_line_item add SERVICE_REQUEST_ID NUMBER(10);
+--alter table package_line_item add SAVINGS_TRAN_CODE NUMBER(10);
+--alter table package_line_item add CHEKING_TRAN_CODE NUMBER(10);
+--alter table package_line_item add SERVICE_REQUEST_ID NUMBER(10);
 alter table package_line_item add PRE_ASSE_CHECK_ID NUMBER(30);
 alter table package_line_item add PRE_ASSE_CRITERIA_ID NUMBER(30);
 alter table package_line_item add PRE_ASSE_VALUE NUMBER(30);
