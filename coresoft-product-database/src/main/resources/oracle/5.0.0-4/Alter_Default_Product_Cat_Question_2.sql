@@ -1,0 +1,1 @@
+alter table default_prod_category_ques add CUSTOMER_TYPE NUMBER(20);
