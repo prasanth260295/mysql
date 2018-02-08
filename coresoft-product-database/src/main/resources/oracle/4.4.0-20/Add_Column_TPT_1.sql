@@ -1,0 +1,1 @@
+--ALTER TABLE TRANSACTION_POSTTODAY ADD REGION_ID VARCHAR2(30); -- commented as already present in 5.0

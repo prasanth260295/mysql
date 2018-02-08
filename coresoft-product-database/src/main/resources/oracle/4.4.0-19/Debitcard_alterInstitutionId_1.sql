@@ -1,0 +1,1 @@
+--Alter Table Debitcard_Subscription add INSTITUTION_ID VARCHAR2(30);-- commented as already present in 5.0
