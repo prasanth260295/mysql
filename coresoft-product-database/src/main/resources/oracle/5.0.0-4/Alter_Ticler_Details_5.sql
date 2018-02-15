@@ -1,0 +1,1 @@
+alter table tickler_details add  customer_type varchar2(20);
