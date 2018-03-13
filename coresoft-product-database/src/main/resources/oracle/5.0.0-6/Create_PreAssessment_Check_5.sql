@@ -21,3 +21,13 @@ CREATE TABLE PREASSESSMENT_CRITERIA_MAPPING
 create sequence PREASSESSMENT_CHECK_SEQ minvalue 1 maxvalue 9999999999 increment by 1 start with 1;
 create sequence PREASSESSMENT_CRITERIA_SEQ minvalue 1 maxvalue 9999999999 increment by 1 start with 1;  
 create sequence PREASS_CRITERIA_MAPPING_SEQ minvalue 1 maxvalue 9999999999 increment by 1 start with 1;
+
+
+insert into PREASSESSMENT_CHECK_MASTER values(1,'AVERAGE_BALANCE');
+insert into PREASSESSMENT_CHECK_MASTER values(2,'ACCOUNT_CLOSED');
+
+insert into PREASSESSMENT_CRITERIA_MASTER values(1,'LESS_THAN');
+insert into PREASSESSMENT_CRITERIA_MASTER values(2,'LESS_THAN_EQUAL_TO');
+insert into PREASSESSMENT_CRITERIA_MASTER values(3,'GREATER_THAN');
+insert into PREASSESSMENT_CRITERIA_MASTER values(4,'GREATER_THAN_EQUAL_TO');
+insert into PREASSESSMENT_CRITERIA_MASTER values(5,'EQUAL_TO');
