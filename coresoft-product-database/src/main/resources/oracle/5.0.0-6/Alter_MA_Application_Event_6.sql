@@ -1,1 +1,0 @@
-alter table master_agreement_appln_event add STATUS VARCHAR2(50);
