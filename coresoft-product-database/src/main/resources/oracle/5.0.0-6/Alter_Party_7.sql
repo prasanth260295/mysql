@@ -1,0 +1,1 @@
+alter table party add  LAST_CONTACT_DATE DATE;
