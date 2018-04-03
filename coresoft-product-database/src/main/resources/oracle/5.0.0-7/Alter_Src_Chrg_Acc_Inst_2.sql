@@ -1,0 +1,1 @@
+alter table srvc_chrg_acc_instance add ACCOUNT_NUMBER VARCHAR2(40);
