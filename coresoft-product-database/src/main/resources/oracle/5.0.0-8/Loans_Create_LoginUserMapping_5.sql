@@ -1,8 +1,8 @@
 CREATE TABLE LOAN_OFFICER_USER_MAPPING (
 
     ID                      		NUMBER(5) NOT NULL ,
-    LOGIN_USER          	   		VARCHAR2(10),
-    LOAN_OFFICER                    VARCHAR2(10),
+    LOGIN_USER          	   		VARCHAR2(20),
+    LOAN_OFFICER                    VARCHAR2(20),
     BRANCH                      	VARCHAR2(10),
     CONSTRAINT LOAN_OFFICER_USER_MAPPING_PK PRIMARY KEY (ID));
   	
