@@ -1,3 +1,20 @@
+
+delete from property_presenter_attributes where property_definition_id in(
+select property_definition_id from property_definition where entity_type_definition_id in(
+select entity_type_definition_id from entity_type_definition where type_name like 'LoanProductDefault'));
+
+delete from property_definition where entity_type_definition_id in( 
+select entity_type_definition_id from entity_type_definition where type_name like 'LoanProductDefault');
+
+delete FROM entity_type_definition WHERE TYPE_NAME LIKE 'LoanProductDefault';
+
+delete from property where entity_type_instance_id in( 
+select entity_type_instance_id from entity_type_instance where type_name like 'LoanProductDefault');
+
+
+delete from entity_type_instance where type_name like 'LoanProductDefault';
+
+
 INSERT INTO ENTITY_TYPE_DEFINITION(ENTITY_TYPE_DEFINITION_ID, TYPE_NAME, TYPE_DESCRIPTION, ENTITY_TYPE_INSTANCE_CLASS, BASE_ENTITY_TYPE_DEF_ID, LOOKUP, SYSTEM, TEMPLATE) VALUES(ENTITYTYPEDEFID_SEQ.nextval, 'LoanProductDefault', 'Loan Product Default', 'com.vsoftcorp.loan.model.entities.LoanProductDefault', NULL, 0, 1, NULL);
 
 -----------------------------------------------------ProductCodeDefault----------------------------------------------------------
